@@ -4,12 +4,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>首页</title>
-		<link rel="stylesheet" type="text/css" href="css/header.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
-		<script src="js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/footer.css"/>
+		<script src="/static/js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<!--待完善内容-->
@@ -24,13 +24,13 @@
 				<a href="#">ZOL商城首页</a> | <a href="#">中关村在线</a>
 			</div>
 			<ul id="list1">
-				<li><a href="">请登录</a>|</li>
-				<li><a href="">免费注册</a>|</li>  <!--register.html-->
+				<li><a href="{% url 'app:login'%}">请登录</a>|</li>
+				<li><a href="{% url 'app:register' %}">免费注册</a>|</li>  <!--register.html-->
 				<li><a href="car.html">我的订单</a>|</li>
 				<li>
 					<a href="#">关注团购</a><span></span> |
 					<div class="code_in_head">
-						<img src="img/head/zolDingYue.jpg"/>
+						<img src="/static/img/head/zolDingYue.jpg"/>
 						<p> 微信关注：ZOL商城</p>
 						<p>扫码赢优惠 订单时时查</p>
 					</div>
@@ -114,17 +114,17 @@
 				<ul class="lunbo_list2_tip">
 				</ul>
 				<div class="left_pre">
-					<img src="img/content_display/prev-btn.png"/>
+					<img src="/static/img/content_display/prev-btn.png"/>
 				</div>
 				<div class="right_next">
-					<img src="img/content_display/next-btn.png"/>
+					<img src="/static/img/content_display/next-btn.png"/>
 
 				</div>
 			</div>
 			<!--===============-->
 			<div class="phion_ad">
-				<img src="img/content_display/ChMkJlfh7kSIFmciAABBhxRmpM8AAWPLAL_XhAAAEGf990.jpg"/>
-				<img src="img/content_display/ChMkJ1fjkveIGHgWAABmoBLwQoAAAWRXgBaN-8AAGa4490.jpg"/>
+				<img src="/static/img/content_display/ChMkJlfh7kSIFmciAABBhxRmpM8AAWPLAL_XhAAAEGf990.jpg"/>
+				<img src="/static/img/content_display/ChMkJ1fjkveIGHgWAABmoBLwQoAAAWRXgBaN-8AAGa4490.jpg"/>
 			</div>
 
 
@@ -145,7 +145,7 @@
 	<div class="brand_group">
 		<h2>品牌团</h2>
 		<div class="left_img">
-			<img src="img/group/ChMkJ1eC9ziICp9QAADDr_L6NxcAATaSwO8NW0AAMPH249.jpg"/>
+			<img src="/static/img/group/ChMkJ1eC9ziICp9QAADDr_L6NxcAATaSwO8NW0AAMPH249.jpg"/>
 			<!--倒计时-->
 			<div class="show_time">
 				<div class="layer"></div>
@@ -162,7 +162,7 @@
 			</div>
 		</div>
 		<div class="right_img">
-			<img src="img/group/ChMkJlfk1iyIb4i6AAFUTMdOdjMAAWS7wLgpCUAAVRk600.jpg"/>
+			<img src="/static/img/group/ChMkJlfk1iyIb4i6AAFUTMdOdjMAAWS7wLgpCUAAVRk600.jpg"/>
 
 			<!--倒计时-->
 			<div class="show_time">
@@ -286,7 +286,7 @@
 			</div>
 
 			<div id="right_2_code">
-				<img src="img/head/zolDingYue.jpg" alt="" />
+				<img src="/static/img/head/zolDingYue.jpg" alt="" />
 				<p>微信关注：ZOL商城</p>
 				<p>扫码赢优惠 订单时时查</p>
 			</div>
