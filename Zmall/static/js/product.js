@@ -142,7 +142,7 @@ $(function(){
 //		console.log(zLL[i].id);
 		var _lizLL = $("<li></li>").attr("class","liCurrent");
 		var _divzLL = $("<div></div>").attr("class","deCurrent")
-			var _imgzLL = $("<img src=" +zLL[i].img+ "/>");
+			var _imgzLL = $("<img src=" +"/static/"+zLL[i].img+ "/>");
 			var _azLL = $("<a></a>").html(zLL[i].title);
 //			var _bzLL = $("<b></b>").html("￥"+zLL.price);
 			var _delzLL = $("<del></del>").html("￥"+zLL[i].pPrice);
@@ -166,7 +166,7 @@ $(function(){
 	})
 	
 	//  动态添加详情页面
-	$.get("json/index.json",function(data){
+	$.get("/static/json/index.json",function(data){
         var id = window.location.search.replace("?id=","");
         
         //今日团
@@ -174,7 +174,7 @@ $(function(){
 			var objL = data.list[i];
 			if(objL.id == id){
 //				alert(objL.id);
-				$(".smallImg img").attr("src",objL.img);
+				$(".smallImg img").attr("src","/static/"+objL.img);
 				$(".up h2").html(objL.title);
 				$(".up .small").html(objL.discribe);
 				$(".price h1").html(objL.price);
@@ -517,12 +517,12 @@ $(function(){
 //		<p>乐视 乐Pro 3（6GB/全网通）新品限量开团！</p>
 //		<b>¥2249</b><del>2499</del> <span>已售出<i>110</i></span> 
 //	</li>
-	$.get("json/product.json",function(data){
+	$.get("/static/json/product.json",function(data){
 		for (var i=0;i<data.conetC.length;i++) {
 			var objCont = data.conetC[i];
 //			console.log(objCont)
 			var _liConet = $("<li></li>");	
-			var _imgConet = $("<img src=" +objCont.img+ "/>");
+			var _imgConet = $("<img src=" +"/static/"+objCont.img+ "/>");
 			var _pConet = $("<p></p>").html(objCont.title);
 			var _bConet = $("<b></b>").html("￥"+objCont.price);
 			var _delConet = $("<del></del>").html("￥"+objCont.pPrice);
@@ -546,7 +546,7 @@ $(function(){
 //			</li>
 			var _liConetS = $("<li></li>");	
 				var _divBS = $("<div></div>");
-					var _imgConetS = $("<img src=" +objCont.img+ "/>");
+					var _imgConetS = $("<img src=" +"/static/"+objCont.img+ "/>");
 					var _divMS = $("<div></div>");					
 						var _pConetS = $("<p></p>").html(objCont.title);
 				var _bConetS = $("<b></b>").html("￥"+objCont.price);
@@ -577,7 +577,7 @@ $(function(){
 
 			var _limoreGS = $("<li></li>");	
 				var _divmoreGS = $("<div></div>").attr("class","one");
-					var _imgmoreGS = $("<img src=" +objCont.img+ "/>");
+					var _imgmoreGS = $("<img src="+"/static/"+objCont.img+ "/>");
 					var _spanmoreGSS = $("<span></span>").html(objCont.title);
 					var _pmoreGS = $("<p></p>");
 						var _bmoreGS = $("<b></b>").html("￥"+objCont.price);
@@ -613,7 +613,7 @@ $(function(){
 	}
 	
 	//产品口碑动态添加
-	$.get("json/product.json",function(data){
+	$.get("/static/json/product.json",function(data){
 		
 		
 		for (var i=0;i<data.prokoubei.length;i++) {
@@ -665,11 +665,11 @@ $(function(){
 	
 	//Z团优势轮播
 	
-	$.get("json/product.json",function(data){
+	$.get("/static/json/product.json",function(data){
 //		console.log("ok")
 		for (var i=0;i<data.Zadv.length;i++) {
 			var obj = data.Zadv[i];
-			var img = obj.img;
+			var img = "/static/" + obj.img;
 			var id = obj.id;			
 			$("#Zadv").append("<li><img src="+ img +"/></li>");
 			

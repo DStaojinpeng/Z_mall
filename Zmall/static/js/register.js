@@ -4,14 +4,15 @@ $(function(){
 //			yanzheng();
 //			function yanzheng(){
 				$("input").focus(function(){
-					$(this).css("border","#c00 solid 1px");					
+					$(this).css("border","gray solid 2px");
 				})
 				$('input').blur(function(){
-					$(this).css("border","#E6E6E6 solid 1px");					
+					$(this).css("border","#E6E6E6 solid 2px");
 					
 				})
 			$("#phoneNum1").blur(function(){
 //				$(this).css("border-color","#E6E6E6 solid 1px");
+				//alert()
 				var reg1 = /^1(3|4|5|7|8)\d{9}$/;
 				if (reg1.test($(this).val()) == false){
 					if($(this).val() == ""){
@@ -29,9 +30,32 @@ $(function(){
 
 					
 				}else{
-						$("#tipNode").find(".error_tip").css("display","none");
-						$("#tipNode").find('span').html("");
-						$("#tipNode").find(".correct_tip").css("display","inline-block");
+					$.ajax({
+						async:true,
+						type:"POST",
+						url:"http://127.0.0.1:8000/register.html",
+						data:{usertel:$('#phoneNum1').val()},
+						success:function(result){
+							if(result == "existed")
+							{
+								$("#tipNode").next("p").html("手机号已存在，请填写另外一个手机号")
+								$("#tipNode").find(".correct_tip").css("display","none");
+								$("#tipNode").find(".error_tip").css("display","inline-block");
+							}
+							else {
+								$("#tipNode").next("p").html("手机号可以注册")
+								$("#tipNode").find(".error_tip").css("display","none");
+								$("#tipNode").find('span').html("");
+								$("#tipNode").find(".correct_tip").css("display","inline-block");
+							}
+						}
+
+					});
+
+						//**********************************************************
+						// $("#tipNode").find(".error_tip").css("display","none");
+						// $("#tipNode").find('span').html("");
+						// $("#tipNode").find(".correct_tip").css("display","inline-block");
 //					$(this).next().css("display","none");
 					flag1 = true;
 				}

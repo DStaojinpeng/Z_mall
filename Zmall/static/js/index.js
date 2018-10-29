@@ -91,7 +91,7 @@ $(function(){
 	
 	
 	
-	
+	// http://127.0.0.1:8000/img/product/ChMkJldhTqyINcAuAALzPyjZHJgAASpBAL2xmgAAvNX073.jpg
 	
 	
 	//导航栏:鼠标进入，块颜色改变
@@ -145,7 +145,7 @@ $(function(){
 		//今日团    列表动态添加
 		for (var i=0;i<data.list.length;i++) {
 			var obj2 = data.list[i];
-			var src2 = "/static/"+obj2.img;
+			var src2 = "/static/"+ obj2.img;
 			var id2 = obj2.id;
 //			console.log(id2);
 			
@@ -264,13 +264,13 @@ $(function(){
             window.open("product.html?id="+$(this).find(".goods_describe").attr("id"),'_blank')
 			
         })
-        
+
 
 		
 		//  即将开团商品列表动态添加
 		for (var i=0;i<data.open_group.length;i++) {
 			var obj3 = data.open_group[i];
-			var src3 = "/static/"+obj3.img;
+			var src3 = "/static/"+ obj3.img;
 			var id3 = obj3.id;
 			var title3  = obj3.title;
 			var discribe3 = obj3.discribe;
